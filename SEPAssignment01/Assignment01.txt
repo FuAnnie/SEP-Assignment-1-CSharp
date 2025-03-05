@@ -1,0 +1,90 @@
+-- Understanding Data Types
+
+1. What type would you choose for the following “numbers”?
+   * A person’s telephone number
+        string
+   * A person’s height
+        float
+   * A person’s age
+        int
+   * A person’s gender (Male, Female, Prefer Not To Answer)
+        enum
+   * A person’s salary
+        decimal
+   * A book’s ISBN
+        string
+   * A book’s price
+        decimal
+   * A book’s shipping weight
+        float
+   * A country’s population
+        long
+   * The number of stars in the universe
+        double
+   * The number of employees in each of the small or medium businesses in the United Kingdom (up to about 50,000 employees per business)
+        int
+
+2. What are the difference between value type and reference type variables? What is
+   boxing and unboxing?
+    (1) Value type will directly hold the value while the reference type will hold the memory address or reference for the value. 
+    (2) Value type will be stored in a stack memory while reference types are stored in the heap memory.
+    (3) Value type will not be collected by garbage collector but reference type will be collected by garbage collector. 
+    (4) Value type will be created by struct or enum while the reference type will be created by class, interface, delegates or array. 
+    (5) Value type cannot accept any null values whereas reference types can accept null values.
+    
+    Boxing: conversion from value type to reference type or object type
+    Unboxing: conversion from reference type to value type
+    int i = 10;
+    obj o = i;  // boxing
+    int j = (int)o; // unboxing
+
+3. What is meant by the terms managed resource and unmanaged resource in .NET
+    Managed resource: managed by garbage collector. 
+    Unmanaged resource: call Dispose() method of IDisposable interface to free up the resource. 
+
+4. What's the purpose of Garbage Collector in .NET?
+    The garbage collector manages the allocation and release of memory for an application. 
+    For developers working with managed code, this means that you don't have to write code to perform memory management tasks. 
+    Automatic memory management can eliminate common problems, such as forgetting to free an object and causing a memory leak or attempting to access memory for an object that's already been freed.
+    
+    
+-- Controlling Flow and Converting Types
+
+1. What happens when you divide an int variable by 0?
+    Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
+    
+2. What happens when you divide a double variable by 0?
+    ∞
+
+3. What happens when you overflow an int variable, that is, set it to a value beyond its range?
+    Error CS0220 : The operation overflows at compile time in checked mode
+
+4. What is the difference between x = y++; and x = ++y;?
+    x = y++;	assign first, increment later
+    x = ++y;	increment first, assign later
+    
+5. What is the difference between break, continue, and return when used inside a loop statement?
+    break: exit the loop
+    continue: skip current iteration
+    return: exit the entire function
+
+6. What are the three parts of a for statement and which of them are required?
+    for (initialization; condition; iteration)
+    {
+        // Loop body
+    }
+    
+    The condition part is required. 
+
+7. What is the difference between the = and == operators?
+    = is an Assignment Operator, which assigns a value to a variable.
+    == is an Equality Operator, which compares two values to check if they are equal.
+
+8. Does the following statement compile? for ( ; true; ) ;
+    Yes. 
+
+9. What does the underscore _ represent in a switch expression?
+    The _ acts as a catch-all, matching any number that doesn't match the previous ones. 
+
+10. What interface must an object implement to be enumerated over by using the foreach statement?
+    IEnumerable
